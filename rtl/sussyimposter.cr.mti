@@ -1,0 +1,117 @@
+C:/intelFPGA_lite/project/yousussybaka/datapath.sv {1 {vlog -work work2 -sv -stats=none C:/intelFPGA_lite/project/yousussybaka/datapath.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module pipeline_reg
+-- Compiling module sourceop_mux_a
+-- Compiling module sourceop_mux_b
+-- Compiling module shift_mux
+-- Compiling module writeback_mux
+-- Compiling module status_reg
+-- Compiling module datapath
+
+Top level modules:
+	datapath
+
+} {} {}} C:/intelFPGA_lite/project/yousussybaka/lab7_autograder_check.sv {1 {vlog -work work2 -sv -stats=none C:/intelFPGA_lite/project/yousussybaka/lab7_autograder_check.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module lab7_check_tb
+
+Top level modules:
+	lab7_check_tb
+
+} {} {}} C:/intelFPGA_lite/project/yousussybaka/lab7_stage1_tb_2.sv {1 {vlog -work work -sv -stats=none C:/intelFPGA_lite/project/yousussybaka/lab7_stage1_tb_2.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module lab7_stage1_tb_2
+
+Top level modules:
+	lab7_stage1_tb_2
+
+} {} {}} C:/intelFPGA_lite/project/yousussybaka/lab7_stage2_tb_2.sv {1 {vlog -work work -sv -stats=none C:/intelFPGA_lite/project/yousussybaka/lab7_stage2_tb_2.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module lab7_stage2_tb_2
+
+Top level modules:
+	lab7_stage2_tb_2
+
+} {} {}} C:/intelFPGA_lite/project/yousussybaka/ALU.sv {1 {vlog -work work2 -sv -stats=none C:/intelFPGA_lite/project/yousussybaka/ALU.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} C:/intelFPGA_lite/project/yousussybaka/lab7stage2b_tb.sv {1 {vlog -work work -sv -stats=none C:/intelFPGA_lite/project/yousussybaka/lab7stage2b_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module lab7_stage2b_tb
+
+Top level modules:
+	lab7_stage2b_tb
+
+} {} {}} C:/intelFPGA_lite/project/yousussybaka/cpu_tb.sv {1 {vlog -work work -sv -stats=none C:/intelFPGA_lite/project/yousussybaka/cpu_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module cpu_tb
+
+Top level modules:
+	cpu_tb
+
+} {} {}} C:/intelFPGA_lite/project/yousussybaka/RAM_and_misc.sv {1 {vlog -work work2 -sv -stats=none C:/intelFPGA_lite/project/yousussybaka/RAM_and_misc.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module RAM
+-- Compiling module tri_state_controller
+
+Top level modules:
+	RAM
+	tri_state_controller
+
+} {} {}} C:/intelFPGA_lite/project/yousussybaka/shifter.sv {1 {vlog -work work2 -sv -stats=none C:/intelFPGA_lite/project/yousussybaka/shifter.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module shifter
+
+Top level modules:
+	shifter
+
+} {} {}} C:/intelFPGA_lite/project/yousussybaka/regfile.sv {1 {vlog -work work2 -sv -stats=none C:/intelFPGA_lite/project/yousussybaka/regfile.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module decoder3to8
+-- Compiling module register
+-- Compiling module mux8to1
+-- Compiling module regfile
+
+Top level modules:
+	regfile
+
+} {} {}} C:/intelFPGA_lite/project/yousussybaka/cpu.sv {1 {vlog -work work2 -sv -stats=none C:/intelFPGA_lite/project/yousussybaka/cpu.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module instru_reg
+-- Compiling module pc_reg
+-- Compiling module pc_reg_two_clk
+-- Compiling module mux3to1
+-- Compiling module mux2to1pc
+-- Compiling module mux2to1addr
+-- Compiling module signextend8bit
+-- Compiling module signextend5bit
+-- Compiling module instru_decoder
+-- Compiling module adder
+-- Compiling module cpu
+
+Top level modules:
+	pc_reg
+	cpu
+
+} {} {}} C:/intelFPGA_lite/project/yousussybaka/lab7_top.sv {1 {vlog -work work2 -sv -stats=none C:/intelFPGA_lite/project/yousussybaka/lab7_top.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module comb_block_left
+-- Compiling module comb_block_right
+-- Compiling module regtest
+-- Compiling module lab7_top
+
+Top level modules:
+	lab7_top
+
+} {} {}} C:/intelFPGA_lite/project/yousussybaka/fsm.sv {1 {vlog -work work2 -sv -stats=none C:/intelFPGA_lite/project/yousussybaka/fsm.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module fsm
+
+Top level modules:
+	fsm
+
+} {} {}}

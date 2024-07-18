@@ -1,0 +1,15 @@
+PC        Binary                             Instruction                             
+00        1101000000000101                   MOV R0, #5                              
+01        1101000100000011                   MOV R1, #3                              
+02        1101010100001110                   MOV R5, #14                             
+03        0110010111000000                   LDR R6, [R5]                            
+04        1100000001001000                   MOV R2, R0, LSL #1                      
+05        1000011001000000                   STR R2, [R6]                            
+06        1010100100000000                   CMP R1, R0 //Should set the N flag to 1 but not modify anything
+07        1000011000100000                   STR R1, [R6]                            
+08        1011000001100001                   AND R3, R0, R1 //R3 should be 1        
+09        1000011001100000                   STR R3, [R6]                            
+0a        1101010000000000                   MOV R4, #0                              
+0b        1011100010000100                   MVN R4, R4 //R4 should be all 1        
+0c        1000011010000000                   STR R4, [R6]                            
+0d        1110000000000000                   HALT                                    

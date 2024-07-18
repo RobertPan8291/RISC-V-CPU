@@ -1,0 +1,67 @@
+C:/intelFPGA_lite/18.1/CPEN_211/211_Lab_7/yousussybaka/datapath.sv {1 {vlog -work work -sv -stats=none C:/intelFPGA_lite/18.1/CPEN_211/211_Lab_7/yousussybaka/datapath.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module pipeline_reg
+-- Compiling module sourceop_mux_a
+-- Compiling module sourceop_mux_b
+-- Compiling module writeback_mux
+-- Compiling module status_reg
+-- Compiling module datapath
+
+Top level modules:
+	datapath
+
+} {} {}} C:/intelFPGA_lite/18.1/CPEN_211/211_Lab_7/yousussybaka/lab7_autograder_check.sv {1 {vlog -work work -sv -stats=none C:/intelFPGA_lite/18.1/CPEN_211/211_Lab_7/yousussybaka/lab7_autograder_check.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module lab7_check_tb
+
+Top level modules:
+	lab7_check_tb
+
+} {} {}} C:/intelFPGA_lite/18.1/CPEN_211/211_Lab_7/yousussybaka/shifter.sv {1 {vlog -work work -sv -stats=none C:/intelFPGA_lite/18.1/CPEN_211/211_Lab_7/yousussybaka/shifter.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module shifter
+
+Top level modules:
+	shifter
+
+} {} {}} C:/intelFPGA_lite/18.1/CPEN_211/211_Lab_7/yousussybaka/RAM_and_misc.sv {1 {vlog -work work -sv -stats=none C:/intelFPGA_lite/18.1/CPEN_211/211_Lab_7/yousussybaka/RAM_and_misc.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module RAM
+-- Compiling module tri_state_controller
+
+Top level modules:
+	RAM
+	tri_state_controller
+
+} {} {}} C:/intelFPGA_lite/18.1/CPEN_211/211_Lab_7/yousussybaka/lab7stage2_tb.sv {1 {vlog -work work -sv -stats=none C:/intelFPGA_lite/18.1/CPEN_211/211_Lab_7/yousussybaka/lab7stage2_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module lab7_stage2_tb
+
+Top level modules:
+	lab7_stage2_tb
+
+} {} {}} C:/intelFPGA_lite/18.1/CPEN_211/211_Lab_7/yousussybaka/lab7_trial_tb.sv {1 {vlog -work work -sv -stats=none C:/intelFPGA_lite/18.1/CPEN_211/211_Lab_7/yousussybaka/lab7_trial_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module lab7_stage1_tb
+
+Top level modules:
+	lab7_stage1_tb
+
+} {} {}} C:/intelFPGA_lite/18.1/CPEN_211/211_Lab_7/yousussybaka/ALU.sv {1 {vlog -work work -sv -stats=none C:/intelFPGA_lite/18.1/CPEN_211/211_Lab_7/yousussybaka/ALU.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} C:/intelFPGA_lite/18.1/CPEN_211/211_Lab_7/yousussybaka/regfile.sv {1 {vlog -work work -sv -stats=none C:/intelFPGA_lite/18.1/CPEN_211/211_Lab_7/yousussybaka/regfile.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module decoder3to8
+-- Compiling module register
+-- Compiling module mux8to1
+-- Compiling module regfile
+
+Top level modules:
+	regfile
+
+} {} {}}

@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'KEY[0]'
+Slack : -13.776
+TNS   : -2347.853
+
+Type  : Slow 1100mV 85C Model Hold 'KEY[0]'
+Slack : -7.917
+TNS   : -1329.436
+
+Type  : Slow 1100mV 85C Model Recovery 'cpu:CPU|fsm:fsm_controller|present_state.10000'
+Slack : -9.184
+TNS   : -9.184
+
+Type  : Slow 1100mV 85C Model Removal 'cpu:CPU|fsm:fsm_controller|present_state.10000'
+Slack : 5.747
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
+Slack : -2.636
+TNS   : -279.231
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'cpu:CPU|fsm:fsm_controller|present_state.10000'
+Slack : 0.469
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'KEY[0]'
+Slack : -13.268
+TNS   : -2256.497
+
+Type  : Slow 1100mV 0C Model Hold 'KEY[0]'
+Slack : -7.724
+TNS   : -1302.933
+
+Type  : Slow 1100mV 0C Model Recovery 'cpu:CPU|fsm:fsm_controller|present_state.10000'
+Slack : -8.960
+TNS   : -8.960
+
+Type  : Slow 1100mV 0C Model Removal 'cpu:CPU|fsm:fsm_controller|present_state.10000'
+Slack : 5.709
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -2.636
+TNS   : -259.688
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'cpu:CPU|fsm:fsm_controller|present_state.10000'
+Slack : 0.456
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'KEY[0]'
+Slack : -8.706
+TNS   : -1451.025
+
+Type  : Fast 1100mV 85C Model Hold 'KEY[0]'
+Slack : -4.821
+TNS   : -804.262
+
+Type  : Fast 1100mV 85C Model Recovery 'cpu:CPU|fsm:fsm_controller|present_state.10000'
+Slack : -4.937
+TNS   : -4.937
+
+Type  : Fast 1100mV 85C Model Removal 'cpu:CPU|fsm:fsm_controller|present_state.10000'
+Slack : 3.538
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
+Slack : -2.636
+TNS   : -204.092
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'cpu:CPU|fsm:fsm_controller|present_state.10000'
+Slack : 0.498
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'KEY[0]'
+Slack : -7.589
+TNS   : -1248.886
+
+Type  : Fast 1100mV 0C Model Hold 'KEY[0]'
+Slack : -4.684
+TNS   : -801.070
+
+Type  : Fast 1100mV 0C Model Recovery 'cpu:CPU|fsm:fsm_controller|present_state.10000'
+Slack : -4.726
+TNS   : -4.726
+
+Type  : Fast 1100mV 0C Model Removal 'cpu:CPU|fsm:fsm_controller|present_state.10000'
+Slack : 3.431
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -2.636
+TNS   : -202.682
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'cpu:CPU|fsm:fsm_controller|present_state.10000'
+Slack : 0.496
+TNS   : 0.000
+
+------------------------------------------------------------

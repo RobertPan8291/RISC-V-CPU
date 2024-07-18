@@ -1,0 +1,9 @@
+Partner 1:
+- Wrote lab7_top
+- Wrote part of fsm
+- Tested tbs
+
+Partner 2:
+- Modified CPU
+- Wrote part of fsm
+- Devised tbs

@@ -1,0 +1,114 @@
+`define Swait 4'b0000
+`define Sdecode 4'b0001
+`define SMovRn 4'b0010
+`define SMovRd 4'b0011
+`define Sloada 4'b0100
+`define Sloadb 4'b0101 
+`define Sloadc 4'b0110
+`define Swrite 4'b0111
+
+module fsm(s, reset, clk, opcode, op, nsel, vsel, asel, bsel, write, loada, loadb, loadc, loads, w);
+	input s, reset, clk; 
+	input [2:0] opcode; 
+	input [1:0] op; 
+	
+	output reg [1:0] nsel; 
+	output reg loada, loadb, loadc, vsel, asel, bsel, write, loads; 
+	output reg w; 
+	
+	reg [4:0] present_state; 
+	
+	always_ff@(posedge clk) begin 
+		if(reset) begin 
+			present_state <= `Swait; // wait
+		end else begin 
+			case (present_state) 
+				`Swait: 
+					if(s) 
+						present_state <= `Sdecode; // is s is true, leave wait
+					else 
+						present_state <= `Swait; 
+				`Sdecode:
+					if(opcode == 3'b110 & op == 2'b10)	// goes to diff states depending on op
+						present_state <= `SMovRn; // no writing, just storing val into reg
+					else if(opcode == 3'b110 & op == 2'b00) // moving reg value into another reg
+						present_state <= `SMovRd; 
+					else if(opcode == 3'b101) //
+						present_state <= `Sloada; 
+				`SMovRn: // mov instruction, constant into reg
+					present_state <= `Swait;
+				`SMovRd: // mov instruction, reg into reg
+					present_state <= `Sloadc;
+				`Sloada: // alu instructions
+					present_state <= `Sloadb;
+				`Sloadb: // alu instructions
+					present_state <= `Sloadc;
+				`Sloadc: // output
+					if(op == 2'b01)
+					present_state <= `Swait; // in cmp stage, we don't write
+					else
+					present_state <= `Swrite;
+				`Swrite: // after writing, we go back to wait
+					present_state <= `Swait; 
+				default: present_state <= 4'bxxxx;
+			endcase 
+			
+			case (present_state) 
+				`Swait:	// nothing happens in this stage. reset brings us here
+					begin
+					w <= 1'b1; 
+					loads <= 1'b0;
+					write <= 1'b0;
+					loads <= 1'b0;
+					end
+				`Sdecode: // gets ready to take any operations
+					begin
+					w <= 1'b0;
+					bsel <= 1'b0;
+					asel <= 1'b0;
+					end
+				`SMovRn: // only for putting imm value into reg
+					begin
+						vsel <= 1'b1;
+						write <= 1'b1;
+						nsel <= 2'b11; //
+					end
+				`SMovRd: // only for putting reg value into reg
+					begin
+						loadb <= 1'b1;
+						loada <= 1'b0;
+						asel <= 1'b1;
+						write <= 1'b0;
+						nsel <= 2'b01; //
+					end
+				`Sloada: // ALU instruction step 1
+					begin 
+						loada <= 1'b1;
+						loadb <= 1'b0;
+						nsel <= 2'b11; // load a, Rn
+					end 
+				`Sloadb: // ALU instruction step 2
+					begin
+						loada <= 1'b0;
+						loadb <= 1'b1;
+						nsel <= 2'b01; // load b, Rm
+					end 
+				`Sloadc: // ALU instruction result
+					begin 	
+						loada <= 1'b0; 
+						loadb <= 1'b0;
+						loadc <= 1'b1;
+						loads <= 1'b1;
+					end
+				`Swrite: 
+					begin
+						vsel <= 1'b0; 
+						write <= 1'b1; 
+						nsel <= 2'b10; // Rd (want an out)
+						loadc <= 1'b0;
+					end
+			endcase
+		end		
+	end
+	
+endmodule

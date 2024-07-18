@@ -1,0 +1,109 @@
+module instru_reg(in, load, clk, out); //lets input go thru to fsm
+	input [15:0] in; 
+	input load, clk;
+	output reg [15:0] out; 
+	
+	always_ff @(posedge clk) begin
+		if(load == 1'b1) begin
+			out <= in; 
+		end
+	end 
+	
+endmodule
+
+module mux3to1(Rn, Rd, Rm, nsel, out); // selects register we are working with
+	input [2:0] Rn, Rd, Rm; 
+	input [1:0] nsel; 
+	output reg[2:0] out; 
+	
+	always @(*) begin 
+		case(nsel)
+			2'b01: out <= Rm; 
+			2'b10: out <= Rd;
+			2'b11: out <= Rn; 
+			2'b00: out <= 3'bxxx;
+			default: out <= 3'bxxx;
+		endcase 
+	end
+endmodule 
+
+module signextend8bit(in, out);
+	input [7:0] in;
+	output [15:0] out; 
+	
+	assign out[15:0] = { {8{in[7]}}, in[7:0] }; // takes bit 7 and extends it from 8 to 15
+endmodule
+
+module signextend5bit(in, out);
+	input [4:0] in;
+	output [15:0] out; 
+	
+	assign out[15:0] = { {11{in[4]}}, in[4:0] }; // takes bit 4 and extends it from 5 to 15
+endmodule
+	
+module instru_decoder(in, nsel, opcode, op, writenum, readnum, shift, sximm8, sximm5, ALUop); 
+	input [15:0] in; 
+	input [1:0] nsel; 
+
+	output [2:0] opcode, readnum, writenum; 
+	output [1:0] ALUop, op, shift; 
+	output [15:0] sximm5, sximm8; // 5 used for lab7, 8 used lab6
+	
+	wire [7:0] imm8;
+	wire [4:0] imm5;
+	wire [2:0] Rn, Rd, Rm;
+	wire [2:0] muxout; 
+	
+	assign opcode = in [15:13]; 
+	assign op = in [12:11];
+	assign ALUop = in [12:11]; 
+	assign shift = in [4:3];
+	assign Rn = in [10:8]; 
+	assign Rd = in [7:5];
+	assign Rm = in [2:0];
+
+	// imm intermediate wires, pre sign-extension
+	assign imm8 = in [7:0];
+	assign imm5 = in [4:0]; 
+	
+	signextend8bit lehi(imm8, sximm8); 
+	signextend5bit hamas(imm5, sximm5); 
+	
+	mux3to1 muxsus(Rn, Rd, Rm, nsel, muxout); // selects which register we are working with
+	
+	assign readnum = muxout;
+	assign writenum = muxout; 
+	
+endmodule
+
+module cpu(clk, reset, s, load, in, out, N, V, Z, w); // puts tgt all modules
+	input clk, reset, s, load;
+	input [15:0] in;
+	output [15:0] out;
+	output N, V, Z, w;
+	
+	// decoder input
+	wire [15:0] decoder_in; 
+	wire [1:0] nsel;
+	
+	//decoder output
+	wire [2:0] opcode, readnum, writenum; 
+	wire [1:0] ALUop, op, shift; 
+	wire [15:0] sximm5, sximm8; 
+	
+	// sm output 
+	wire loada, loadb, loadc, loads, vsel, asel, bsel, write; 
+	
+	// datapath input
+	wire [15:0] mdata;
+	wire [7:0] PC;
+	
+	instru_reg carrot(in, load, clk, decoder_in);
+	
+	instru_decoder cucumber(decoder_in, nsel, opcode, op, writenum, readnum, shift, sximm8, sximm5, ALUop);
+	
+	fsm fsm_controller(s, reset, clk, opcode, op, nsel, vsel, asel, bsel, write, loada, loadb, loadc, loads, w); 
+	
+	datapath DP(clk, readnum, vsel, loada, loadb, shift, asel, bsel, ALUop, loadc, loads, writenum, write, sximm8, Z, V, N, out, mdata, PC, sximm5);
+	
+endmodule 

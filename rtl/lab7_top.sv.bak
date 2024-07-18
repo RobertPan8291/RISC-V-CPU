@@ -1,0 +1,23 @@
+module lab7_top(KEY,SW,LEDR,HEX0,HEX1,HEX2,HEX3,HEX4,HEX5);
+    input [3:0] KEY;
+    input [9:0] SW;
+    output [9:0] LEDR;
+    output [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
+
+	wire clk, reset, s, load;
+	wire [15:0] reg_in;
+	wire [15:0] out;
+	wire N, V, Z, w, write, enable;
+	wire [8:0] mem_addr, write_address;
+	wire [1:0] mem_cmd;
+    wire [15:0] dout, din;
+
+    cpu CPU((~KEY[0]), (~KEY[1]), (~KEY[2]), (~KEY[3]), reg_in, out, N, V, Z, w, mem_cmd, mem_addr, reg_in);
+
+    RAM MEM(~KEY[0], mem_addr, mem_addr, write, out, dout); //"out" here indicates din
+
+    tri_state_controller controller(mem_cmd, mem_addr[8], enable, write);
+
+    assign reg_in = enable ? dout : {16{1'bz}};
+
+endmodule 
